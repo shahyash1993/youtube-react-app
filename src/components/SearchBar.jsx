@@ -6,11 +6,12 @@ class SearchBar extends Component {
   }
 
   state = {
-    searchText: "Enter Search Text Here..."
+    searchText: "civil"
   };
 
   onFormSubmit = ev => {
     ev.preventDefault();
+    this.props.onSearchTextSubmit(this.state.searchText);
   };
 
   onInputChange = ev => {
