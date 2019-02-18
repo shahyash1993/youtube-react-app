@@ -9,6 +9,10 @@ class SearchBar extends Component {
     searchText: "Enter Search Text Here..."
   };
 
+  onFormSubmit = ev => {
+    ev.preventDefault();
+  };
+
   onInputChange = ev => {
     this.setState({
       [ev.target.name]: ev.target.value
@@ -18,7 +22,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar ui segment">
-        <form className="ui form">
+        <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label className="label">Video Search</label>
             <input
