@@ -1,0 +1,18 @@
+import React from "react";
+
+const VideoDetail = ({ video }) => {
+  if (!video) return <div>Loading...</div>;
+
+  const videoSrc = `http://www.youtube.com/embed/${video.id.videoId}`;
+  return (
+    <div className="ui segment">
+      <div className="ui embed">
+        <iframe src={videoSrc} title={video.snippet.title} />
+      </div>
+      <h4 className="ui header">{video.snippet.title}</h4>
+      <p className="">{video.snippet.description}</p>
+    </div>
+  );
+};
+
+export default VideoDetail;
